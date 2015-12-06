@@ -51,7 +51,7 @@ def SpaceInvader():
 	pygame.init()
 	screen = pygame.display.set_mode((largura,altura))
 	pygame.display.set_caption("Space Invader")
-	imagemFundo = pygame.image.load('img/map.png')
+	imagemFundo = pygame.image.load('img/bacgroundSky.png')
 	cloud = pygame.image.load('img/cloud3.png')
 
 
