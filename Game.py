@@ -1,8 +1,8 @@
 import pygame,sys
 from pygame.locals import*
 from random import randint
-from classes import Nave
-from classes import Invasor as Inimigo 
+from classes.Nave import Nave
+from classes.Invasor import Invasor as Inimigo 
 
 largura = 1000
 altura = 600
@@ -72,8 +72,6 @@ def SpaceInvader():
 		relogio.tick(30)
 		
 		tempo = pygame.time.get_ticks()/1000
-
-
 
 		for event in pygame.event.get():
 			if event.type == QUIT:
@@ -157,3 +155,4 @@ def SpaceInvader():
 
 
 SpaceInvader()
+

@@ -1,4 +1,6 @@
-import pygame,Projectil
+import pygame
+from classes.Projectil import Projectil
+from classes.Invasor import Invasor
 
 class Nave(pygame.sprite.Sprite):
 	def __init__(self,altura,largura):
@@ -10,8 +12,6 @@ class Nave(pygame.sprite.Sprite):
 		self.imagemNave4 = pygame.image.load('img/ship4.png')
 
 		self.imagemExplosao = pygame.image.load('img/explosion1.png')
-
-
 		
 		self.listaImagens = [self.imagemNave1,self.imagemNave2,self.imagemNave3,self.imagemNave4]
 		self.posImagem = 0
@@ -59,19 +59,15 @@ class Nave(pygame.sprite.Sprite):
 		self.__movimento
 
 	def disparar(self,x,y):
-		meuProjectil = Projectil.Projectil(x,y,"img/tiro1.png",True)
+		meuProjectil = Projectil(x,y,"img/tiro1.png",True)
 		self.listaDisparo.append(meuProjectil)
 		self.somDisparo.play()
-
-	
-
 
 	def destruido(self):
 		self.somExplosao.play()
 		self.vida = False
 		self.velocidade = 0
-		self.imagemPlayer = self.imagemExplosao
-		
+		self.imagemPlayer = self.imagemExplosao		
 
 	def comportamento(self,tempo):
 		self.posImagem +=1

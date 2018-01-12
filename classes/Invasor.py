@@ -1,4 +1,6 @@
-import pygame,Projectil
+import pygame
+from classes.Projectil import Projectil
+
 from random import randint
 
 class Invasor(pygame.sprite.Sprite):
@@ -80,7 +82,7 @@ class Invasor(pygame.sprite.Sprite):
 
 	def __disparo(self):
 		x,y = self.rect.center
-		meuProjectil = Projectil.Projectil(x-16,y,'img/bala1.png',False)
+		meuProjectil = Projectil(x-16,y,'img/bala1.png',False)
 		self.listaDisparo.append(meuProjectil)
 
 	def __movimento(self):
