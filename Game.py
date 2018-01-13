@@ -2,7 +2,8 @@ import pygame,sys
 from pygame.locals import*
 from random import randint
 from classes.Nave import Nave
-from classes.Invasor import Invasor as Inimigo 
+from classes.Invasor import Invasor as Inimigo
+# from classes.Menu import MenuGame 
 
 largura = 1000
 altura = 600
@@ -72,11 +73,13 @@ def SpaceInvader():
 		relogio.tick(30)
 		
 		tempo = pygame.time.get_ticks()/1000
+		
 
 		for event in pygame.event.get():
 			if event.type == QUIT:
 				pygame.quit()
 				sys.exit()
+
 
 			if emJogo == True:
 				if event.type == pygame.KEYDOWN:
@@ -93,12 +96,14 @@ def SpaceInvader():
 						jogador.disparar(x-15,y)
 						jogador.disparar(x+15,y)
 
-
+		
 		screen.blit(imagemFundo,(0,0))
 		screen.blit(cloud,(50,100))
 		screen.blit(cloud,(300,200))
 		jogador.desenhar(screen)
 		jogador.comportamento(screen)
+		primeiraTela = MenuGame()
+		primeiraTela.press_start(screen)
 		
 
 		if len(jogador.listaDisparo)>0:
@@ -154,5 +159,5 @@ def SpaceInvader():
 		pygame.display.update()
 
 
-SpaceInvader()
+
 

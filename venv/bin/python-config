@@ -1,4 +1,4 @@
-#!/home/levy/Documentos/scripts/gamedev/venv/bin/python
+#!/home/levy/Documentos/scripts/gamedev/Scripts/venv/bin/python
 
 import sys
 import getopt
