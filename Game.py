@@ -102,8 +102,7 @@ def SpaceInvader():
 		screen.blit(cloud,(300,200))
 		jogador.desenhar(screen)
 		jogador.comportamento(screen)
-		primeiraTela = MenuGame()
-		primeiraTela.press_start(screen)
+		
 		
 
 		if len(jogador.listaDisparo)>0:

@@ -10,17 +10,17 @@ class MenuGame:
         self.bg_image = pygame.image.load('img/bg_menu.gif')
         
     def press_start(self):
-        self.opcao1 = self.font.render("Press Enter",0,(250,0,0))
+        self.opcao1 = self.font.render("Press a",0,(250,0,0))
         self.screen.blit(self.bg_image,(0,0))
         self.screen.blit(self.opcao1,(450,100))
 
         while True:
             for event in pygame.event.get():
+                if event.type == QUIT:
+                        sys.exit()
                 if event.type == pygame.KEYDOWN:
-                    if event.type == QUIT: 
-    				    pygame.quit()
-				        sys.exit()
-                     if event.key == K_BACKSPACE:
+                    if event.key == K_a:
+                        print("chamando")
                         SpaceInvader()
 
             pygame.display.update()
