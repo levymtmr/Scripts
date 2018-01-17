@@ -80,21 +80,24 @@ def SpaceInvader():
 				pygame.quit()
 				sys.exit()
 
+			if event.type == pygame.KEYDOWN:
+				if event.key == K_s:
+					x,y = jogador.rect.center
+					jogador.disparar(x-15,y)
+					jogador.disparar(x+15,y)
 
-			if emJogo == True:
-				if event.type == pygame.KEYDOWN:
-					if event.key == K_LEFT:
-						jogador.movimentoEsquerda()
-					elif event.key == K_RIGHT:
-						jogador.movimentoDireita()
-					elif event.key == K_UP:
-						jogador.up()
-					elif event.key == K_DOWN:
-						jogador.down()
-					elif event.key == K_s:
-						x,y = jogador.rect.center
-						jogador.disparar(x-15,y)
-						jogador.disparar(x+15,y)
+		if emJogo == True:
+			if event.type == pygame.KEYDOWN:
+				if event.key == K_LEFT:
+					jogador.movimentoEsquerda()
+				elif event.key == K_RIGHT:
+					jogador.movimentoDireita()
+				elif event.key == K_UP:
+					jogador.up()
+				elif event.key == K_DOWN:
+					jogador.down()
+
+			
 
 		
 		screen.blit(imagemFundo,(0,0))
