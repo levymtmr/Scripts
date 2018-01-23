@@ -1,5 +1,5 @@
 import pygame
-from classes.Projectil import Projectil
+from classes.projectil import Projectil
 
 from random import randint
 

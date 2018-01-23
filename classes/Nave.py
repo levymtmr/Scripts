@@ -1,6 +1,6 @@
 import pygame
-from classes.Projectil import Projectil
-from classes.Invasor import Invasor
+from classes.projectil import Projectil
+from classes.invasor import Invasor
 
 class Nave(pygame.sprite.Sprite):
 	def __init__(self,altura,largura):

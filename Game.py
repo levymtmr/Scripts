@@ -1,8 +1,8 @@
 import pygame,sys
 from pygame.locals import*
 from random import randint
-from classes.Nave import Nave
-from classes.Invasor import Invasor as Inimigo
+from classes.nave import Nave
+from classes.invasor import Invasor as Inimigo
 # from classes.Menu import MenuGame 
 
 largura = 1000

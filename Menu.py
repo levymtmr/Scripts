@@ -1,6 +1,7 @@
 import pygame,sys 
 from pygame.locals import *
-from Game import SpaceInvader
+from game import SpaceInvader
+from classes.cursor import Cursor
 
 class MenuGame:
     def __init__(self):
@@ -8,16 +9,21 @@ class MenuGame:
         self.screen = pygame.display.set_mode((1000,600))
         self.font = pygame.font.SysFont("font/space.ttf",30)
         self.bg_image = pygame.image.load('img/bg_menu.gif')
+        self.visible_mouse = pygame.mouse.set_visible(False)
         
 
     def press_start(self, screen):
         self.opcao1 = self.font.render("Press Start",0,(250,0,0))
         self.screen.blit(self.bg_image,(0,0))
-       
-    
-        self.mouse = pygame.mouse.get_pos()
-        print(self.mouse)
-        if self.mouse == (450,100):
+        self.mouse_position = pygame.mouse.get_pos()
+        
+        self.mouse = Cursor()
+        self.mouse.draw(self.screen,(self.mouse_position))
+
+        
+        # print(self.mouse_position)
+        # trocar a posicao por um body ou surface
+        if self.mouse_position == (450,100):
             self.screen.blit(self.opcao1,(450,100))
         
     def carregar(self,screen):
