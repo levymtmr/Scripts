@@ -13,6 +13,7 @@ class MenuGame:
         
 
     def press_start(self, screen):
+        # criar objeto que receba a fonte, como um body para criar a colisao
         self.opcao1 = self.font.render("Press Start",0,(250,0,0))
         self.screen.blit(self.bg_image,(0,0))
         self.mouse_position = pygame.mouse.get_pos()
@@ -22,6 +23,7 @@ class MenuGame:
 
         
         # print(self.mouse_position)
+
         # trocar a posicao por um body ou surface
         if self.mouse_position == (450,100):
             self.screen.blit(self.opcao1,(450,100))
